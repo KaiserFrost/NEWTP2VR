@@ -12,7 +12,4 @@ RUN apt -y install git
 RUN apt -y install python3.7
 RUN apt -y install python3-pip
 RUN apt -y install libpq-dev
-RUN cd /usr/local/bin/auth
-RUN ls 
-RUN pip3 install -r requirements.txt
-CMD ["testflask.py"]
+RUN cd /usr/local/bin/auth && RUN pip3 install -r requirements.txt && CMD ["testflask.py"]
