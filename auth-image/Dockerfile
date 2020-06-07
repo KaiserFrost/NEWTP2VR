@@ -14,4 +14,5 @@ RUN apt -y install python3-pip
 RUN apt -y install libpq-dev
 WORKDIR "/usr/local/bin/auth"
 RUN pip3 install -r requirements.txt
-CMD ["testflask.py"]
+RUN ls
+CMD [ "python3", "./testflask.py" ]
