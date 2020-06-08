@@ -15,7 +15,10 @@ class HttpRequestHandler(http.server.SimpleHTTPRequestHandler):
 
     def redirect(self):
                     self.send_response(303)
-                    self.send_header('Location','http://0.0.0.0:5001/login?Referer=http://0.0.0.0:'+str(PORT))
+                    #alterado
+                    #http://0.0.0.0:5001
+                    
+                    self.send_header('Location','http://127.0.0.1:5002/login?Referer=http://0.0.0.0:'+str(PORT))
                     self.end_headers()
     def do_GET(self):
 
