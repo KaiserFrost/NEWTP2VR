@@ -1,4 +1,4 @@
-FROM ubuntu:18.4
+FROM ubuntu:18.04
 
 RUN apt update
 RUN apt -y install python3.7
