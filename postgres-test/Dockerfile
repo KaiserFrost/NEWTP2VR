@@ -60,6 +60,7 @@ EXPOSE 5432
 # Add VOLUMEs to allow backup of config, logs and databases
 VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
 
+RUN chown -R postgres:postgres /var/lib/postgresql/12/ && sudo chmod -R u=rwX,go= /var/lib/postgresql/12/
 # Set the default command to run when starting the container
 CMD ["/usr/lib/postgresql/12/bin/postgres", "-D", "/var/lib/postgresql/12/main", "-c", "config_file=/etc/postgresql/12/main/postgresql.conf"]
 
