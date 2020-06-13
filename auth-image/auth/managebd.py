@@ -12,7 +12,7 @@ DBUSER = os.getenv('DBUSER')
 DBPASSWORD = os.getenv("DBPASSWORD")
 AUTHSECRET = os.getenv("AUTHSECRET")
 HOST = "127.0.0.1"
-PORT = "5006"
+PORT = "5004"
 #AUTHSECRET = os.getenv("AUTHSECRET")
 
 def RegisterUser(username, password,email, isAdmin):
