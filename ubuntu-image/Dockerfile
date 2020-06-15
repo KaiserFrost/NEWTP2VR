@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 RUN apt update
 RUN apt -y install python3.7
-RUN get install nano
+RUN apt install nano
 RUN apt -y install vsftpd
 RUN apt -y install ftp
 RUN apt-get update && apt-get install -y gnupg2
