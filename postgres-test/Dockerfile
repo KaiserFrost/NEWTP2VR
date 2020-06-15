@@ -4,7 +4,7 @@
 
 
 FROM ubuntu:16.04
-RUN get install nano
+RUN apt install nano
 RUN apt-get update && apt-get install -y gnupg2
 
 # Add the PostgreSQL PGP key to verify their Debian packages.
