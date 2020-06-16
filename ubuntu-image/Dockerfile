@@ -9,6 +9,8 @@ RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net --recv-keys B97B0A
 #     of PostgreSQL, ``9.3``
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 
+RUN apt -y install iputils-ping
+RUN apt -y install net-tools
 RUN apt install nano
 RUN apt -y install vsftpd
 RUN apt -y install ftp
