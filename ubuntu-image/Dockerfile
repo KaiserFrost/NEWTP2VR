@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 RUN apt update
-RUN apt -y install python3.7
+RUN apt -y install python3
 RUN apt install nano
 RUN apt -y install vsftpd
 RUN apt -y install ftp
