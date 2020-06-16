@@ -11,6 +11,8 @@ RUN apt update
 RUN apt -y install git
 RUN apt -y install nano
 RUN apt -y install python3.7
+RUN apt -y install iputils-ping
+RUN apt -y install net-tools
 RUN apt -y install python3-pip
 RUN apt -y install libpq-dev
 WORKDIR "/usr/local/bin/auth"
