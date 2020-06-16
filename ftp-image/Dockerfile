@@ -8,6 +8,8 @@ COPY . /usr/local/bin/
 
 RUN apt update
 RUN apt -y install git
+RUN apt -y install iputils-ping
+RUN apt -y install net-tools
 RUN apt -y install python3.7
 RUN apt -y install python3-pip
 WORKDIR /usr/local/bin/ftpserv/
