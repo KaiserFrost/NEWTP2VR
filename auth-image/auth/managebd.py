@@ -7,21 +7,21 @@ from dotenv import load_dotenv
 
 
 load_dotenv("varia.env")
-DBNAME = os.getenv('DBNAME')
-DBUSER = os.getenv('DBUSER')
-DBPASSWORD = os.getenv("DBPASSWORD")
-AUTHSECRET = os.getenv("AUTHSECRET")
+DBNAME = "postgres"
+DBUSER = "postgres"
+DBPASSWORD = "123qweasd"
+AUTHSECRET = "some secret"
 HOST = "127.0.0.1"
-PORT = "5004"
+PORT = "5002"
 #AUTHSECRET = os.getenv("AUTHSECRET")
 
 def RegisterUser(username, password,email, isAdmin):
     conn = None
-    query = "insert into clients (\"username\", \"password\",\"email\", \"IsAdmin\") values(%s,%s,%s,%s)"
+    query = "insert into clients (\"username\", \"password\",\"email\", \"isadmin\") values(%s,%s,%s,%s)"
 
     try:
         
-        conn = psycopg2.connect("dbname=" + DBNAME + " user=" + DBUSER + " host=" + HOST +" port=" + PORT  + " password=" +DBPASSWORD)
+        conn = psycopg2.connect("dbname=" + DBNAME + " user=" + DBUSER + " host=" + HOST  +  " port=" + PORT + " password=" +DBPASSWORD)
         cur = conn.cursor()
         cur.execute(query, (username,password,email,isAdmin))
         conn.commit()
@@ -43,7 +43,7 @@ def VerifyUser(username,password):
     query = "select * from clients where \"username\"='" + username + "' and \"password\"='" + password + "'"
     insertoken = """Update clients set token= %s where username= %s"""
     try:
-        conn = psycopg2.connect("dbname=" + DBNAME + " user=" + DBUSER + " host=" + HOST  + " password=" +DBPASSWORD)
+        conn = psycopg2.connect("dbname=" + DBNAME + " user=" + DBUSER + " host=" + HOST    +  " port=" + PORT + " password=" +DBPASSWORD)
         cur = conn.cursor()
         cur.execute(query)
         
