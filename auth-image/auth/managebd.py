@@ -11,8 +11,8 @@ DBNAME = "postgres"
 DBUSER = "postgres"
 DBPASSWORD = "123qweasd"
 AUTHSECRET = "some secret"
-HOST = "127.0.0.1"
-PORT = "5002"
+HOST = "192.168.122.231"
+PORT = "5432"
 #AUTHSECRET = os.getenv("AUTHSECRET")
 
 def RegisterUser(username, password,email, isAdmin):
