@@ -16,7 +16,7 @@ class MyHandler(FTPHandler):
 class MyAuthorizer(DummyAuthorizer):
     def validate_authentication(self, username, password, handler):
         #check if the token is valid with the authentication server
-        x = requests.get("http://auth_container:5001/verify?token="+password)
+        x = requests.get("http://127.0.0.1:5007/verify?token="+password)
         if x.text == "true":
             valid = True
         # if valid
