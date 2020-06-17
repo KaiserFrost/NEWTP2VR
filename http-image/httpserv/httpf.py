@@ -26,7 +26,7 @@ class HttpRequestHandler(http.server.SimpleHTTPRequestHandler):
                 if path.exists("testfile.txt"):
                     with open("testfile.txt","rb") as file:  
                         usertoken = file.read()
-                        x = requests.get("http://auth_container:5001/verify?token="+usertoken.decode())
+                        x = requests.get("http://192.168.122.2:5001/verify?token="+usertoken.decode())
                         if x.text == "true":
                             return super().do_GET()
                         else:
@@ -39,7 +39,7 @@ class HttpRequestHandler(http.server.SimpleHTTPRequestHandler):
                     else:
                         usertoken = query_parameters["token"][0]
                         #usertoken = bytes.fromhex(usertoken)
-                        x = requests.get("http://auth_container:5001/verify?token="+usertoken)
+                        x = requests.get("http://192.168.122.2:5001/verify?token="+usertoken)
                         if x.text == "true":
                             with open("testfile.txt","w") as file:
                                   file.write(usertoken)
