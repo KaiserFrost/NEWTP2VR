@@ -22,7 +22,7 @@ RUN apt-get install wget
 RUN wget https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/distribution-karaf/0.6.4-Carbon/distribution-karaf-0.6.4-Carbon.zip
 RUN apt-get install unzip
 RUN unzip distribution-karaf-0.6.4-Carbon.zip
-RUN cd distribution-karaf-0.6.4-Carbon
+WORKDIR /distribution-karaf-0.6.4-Carbon
 RUN ./bin/karaf
 RUN feature:install odl-restconf odl-l2switch-switch odl-mdsal-apidocs odl-dlux-all
 CMD ["/bin/bash"]
