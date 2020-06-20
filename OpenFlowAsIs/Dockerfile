@@ -19,7 +19,8 @@ RUN apt-get update && \
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 RUN export JAVA_HOME
 RUN apt-get install wget
-RUN wget https://www.youtube.com/redirect?event=video_description&v=so3TW7Xrq6Y&redir_token=hDlTHxFRuNL1wvWluqNDsdBFRox8MTU5Mjc2MTc1NkAxNTkyNjc1MzU2&q=https%3A%2F%2Fnexus.opendaylight.org%2Fcontent%2Frepositories%2Fopendaylight.release%2Forg%2Fopendaylight%2Fintegration%2Fdistribution-karaf%2F0.5.2-Boron-SR2%2Fdistribution-karaf-0.5.2-Boron-SR2.zip
+RUN apt-get install unzip
+RUN wget https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/distribution-karaf/0.5.2-Boron-SR2/distribution-karaf-0.5.2-Boron-SR2.zip
 RUN unzip distribution-karaf-0.5.2-Boron-SR2.zip
 WORKDIR distribution-karaf-0.5.2-Boron-SR2/
 
