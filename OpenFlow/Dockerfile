@@ -23,6 +23,6 @@ RUN wget https://nexus.opendaylight.org/content/repositories/opendaylight.releas
 RUN apt-get install unzip
 RUN unzip distribution-karaf-0.6.4-Carbon.zip
 WORKDIR /distribution-karaf-0.6.4-Carbon
-CMD ["./bin/karaf"]
+CMD ["./bin/karaf","feature:install odl-restconf odl-l2switch-switch odl-mdsal-apidocs odl-dlux-core odl-dluxapps-nodes odl-dluxapps-topology odl-dluxapps-yangui odl-dluxapps-yangvisualizer odl-dluxapps-yangman"]
 #CMD ["./bin/karaf","feature:install odl-restconf odl-l2switch-switch odl-mdsal-apidocs odl-dlux-all"]
 #CMD ["/bin/bash"]
