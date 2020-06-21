@@ -25,7 +25,7 @@ RUN export JAVA_HOME
 RUN apt-get install wget
 RUN apt-get install unzip
 
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
 RUN apt-get install nodejs
 RUN npm install -g grunt-cli
 
