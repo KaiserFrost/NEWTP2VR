@@ -30,7 +30,7 @@ RUN apt-get install nodejs
 RUN npm install -g grunt-cli
 
 RUN wget https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.3.0-Lithium/distribution-karaf-0.3.0-Lithium.tar.gz
-RUN unzip distribution-karaf-0.3.0-Lithium.tar.gz
+RUN tar -zxvf distribution-karaf-0.3.0-Lithium.tar.gz
 WORKDIR distribution-karaf-0.3.0-Lithium/
 
 CMD ["./bin/karaf"]
