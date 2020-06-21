@@ -3,7 +3,8 @@ FROM ubuntu:16.04
 
 
 RUN apt-get update
-# install tools - docker ubuntu
+
+RUN install tools - docker ubuntu
 RUN apt install -y bash-completion software-properties-common python-software-properties sudo curl ssh git
 
 # Install OpenJDK-8
@@ -23,9 +24,14 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 RUN export JAVA_HOME
 RUN apt-get install wget
 RUN apt-get install unzip
+
+RUN curl -sL https://deb.nodesource.com/setup_10.x | -E bash -
+RUN apt-get install nodejs
+RUN npm install -g grunt-cli
+
 RUN wget https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.3.0-Lithium/distribution-karaf-0.3.0-Lithium.tar.gz
 RUN unzip distribution-karaf-0.3.0-Lithium.tar.gz
 WORKDIR distribution-karaf-0.3.0-Lithium/
-CMD ["./bin/bash"]
-#CMD ["./bin/karaf"]
+
+CMD ["./bin/karaf"]
 
