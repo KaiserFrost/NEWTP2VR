@@ -28,7 +28,7 @@ RUN apt-get install unzip
 #RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
 #RUN apt-get install nodejs
 #RUN npm install -g grunt-cli
-RUN git https://github.com/CiscoDevNet/OpenDaylight-Openflow-App.git
+RUN git clone https://github.com/CiscoDevNet/OpenDaylight-Openflow-App.git
 RUN wget https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.3.0-Lithium/distribution-karaf-0.3.0-Lithium.tar.gz
 RUN tar -zxvf distribution-karaf-0.3.0-Lithium.tar.gz
 #WORKDIR distribution-karaf-0.3.0-Lithium/
