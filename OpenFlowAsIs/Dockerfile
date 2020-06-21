@@ -3,8 +3,7 @@ FROM ubuntu:16.04
 
 
 RUN apt-get update
-
-RUN install tools - docker ubuntu
+# install tools - docker ubuntu
 RUN apt install -y bash-completion software-properties-common python-software-properties sudo curl ssh git
 
 # Install OpenJDK-8
