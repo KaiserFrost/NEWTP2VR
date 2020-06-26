@@ -17,6 +17,7 @@ class MyAuthorizer(DummyAuthorizer):
     def validate_authentication(self, username, password, handler):
         #check if the token is valid with the authentication server
         x = requests.get("http://192.168.122.2:5001/verify?token="+password)
+        valid = False
         if x.text == "true":
             valid = True
         # if valid
